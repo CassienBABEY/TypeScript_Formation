@@ -1,0 +1,1 @@
+// let member: object = []; // object
