@@ -5,4 +5,4 @@ function fetchUser(id, username) {
 function fetchLoggedInUser(...params) {
     fetchUser(...params);
 }
-fetchLoggedInUser(3, "Wario");
+fetchLoggedInUser(3, "Wario"); // OK
