@@ -1,3 +1,6 @@
+import { HasHTMLFormat } from '../interfaces/HasHTMLFormat';
+import { Datas } from '../classes/Datas.js';
+
 export class FormInput {
 
     form: HTMLFormElement;
@@ -47,8 +50,13 @@ export class FormInput {
 
         if(Array.isArray(inputs)){
             const [type, firstName, lastName, address, country, town, zip, product, price, quantity, tva] = inputs;
-            console.log(type, firstName, lastName, address, country, town, zip, product, price, quantity, tva);
+            // console.log(type, firstName, lastName, address, country, town, zip, product, price, quantity, tva);
 
+            let docData: HasHTMLFormat;
+            let date: Date = new Date();
+
+            docData = new Datas(type, firstName, lastName, address, country, town, zip, product, price, quantity, tva, date)
+            console.log(docData);
         }
     }
 

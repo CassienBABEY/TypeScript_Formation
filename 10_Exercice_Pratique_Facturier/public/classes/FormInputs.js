@@ -1,3 +1,4 @@
+import { Datas } from '../classes/Datas.js';
 export class FormInput {
     constructor() {
         this.form = document.getElementById('form');
@@ -24,7 +25,11 @@ export class FormInput {
         const inputs = this.inputData();
         if (Array.isArray(inputs)) {
             const [type, firstName, lastName, address, country, town, zip, product, price, quantity, tva] = inputs;
-            console.log(type, firstName, lastName, address, country, town, zip, product, price, quantity, tva);
+            // console.log(type, firstName, lastName, address, country, town, zip, product, price, quantity, tva);
+            let docData;
+            let date = new Date();
+            docData = new Datas(type, firstName, lastName, address, country, town, zip, product, price, quantity, tva, date);
+            console.log(docData);
         }
     }
     inputData() {
