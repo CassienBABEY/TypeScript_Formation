@@ -29,7 +29,7 @@ export class FormInput {
             let docData;
             let date = new Date();
             docData = new Datas(type, firstName, lastName, address, country, town, zip, product, price, quantity, tva, date);
-            console.log(docData);
+            console.log(docData.htmlFormat());
         }
     }
     inputData() {

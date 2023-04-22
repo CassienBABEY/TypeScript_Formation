@@ -56,7 +56,7 @@ export class FormInput {
             let date: Date = new Date();
 
             docData = new Datas(type, firstName, lastName, address, country, town, zip, product, price, quantity, tva, date)
-            console.log(docData);
+            console.log(docData.htmlFormat());
         }
     }
 
