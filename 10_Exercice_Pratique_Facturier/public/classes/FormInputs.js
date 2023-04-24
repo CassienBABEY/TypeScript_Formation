@@ -18,9 +18,11 @@ export class FormInput {
         this.docContainer = document.getElementById('document-container');
         this.hiddenDiv = document.getElementById('hiddenDiv');
         this.btnPrint = document.getElementById('print');
+        this.btnReload = document.getElementById('reload');
         // Listener
         this.SubmitFormListener();
         this.printListener(this.btnPrint, this.docContainer);
+        this.deleteListener(this.btnReload);
     }
     // Listeners
     SubmitFormListener() {
@@ -31,6 +33,12 @@ export class FormInput {
             let availableDoc;
             availableDoc = new Print(docContainer);
             availableDoc.print();
+        });
+    }
+    deleteListener(btn) {
+        btn.addEventListener('click', () => {
+            document.location.reload();
+            window.scrollTo(0, 0);
         });
     }
     handleFormSubmit(e) {
