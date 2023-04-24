@@ -1,3 +1,4 @@
+import { Storage } from "../classes/Storage.js";
 export class Display {
     constructor(container, hiddenDiv, btnPrint) {
         this.container = container;
@@ -6,8 +7,9 @@ export class Display {
         this.formContainer = document.getElementById("form-container");
     }
     render(docObj, docType) {
-        const HMTLString = docObj.htmlFormat();
-        this.container.innerHTML = HMTLString;
+        const htmlString = docObj.htmlFormat();
+        this.container.innerHTML = htmlString;
+        new Storage(docType, htmlString);
         if (docType === "invoice") {
             this.btnPrint.innerText = "Imprimer la facture";
         }
