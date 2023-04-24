@@ -1,5 +1,5 @@
 import { HasHTMLFormat } from "../interfaces/HasHTMLFormat.js";
-import { HasRender} from "../interfaces/hasRender.js";
+import { HasRender} from "../interfaces/HasRender.js";
 
 export class Display implements HasRender {
 
