@@ -5,10 +5,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-function Test(hw) {
-    return function (constructor) {
-        console.log(constructor);
-        console.log(hw);
+function Component(id) {
+    return function (target) {
+        const el = document.getElementById(id);
+        const h1 = document.createElement('h1');
+        const objCar = new target("Ford", "rouge");
+        h1.innerText = objCar.carDetails();
+        el.append(h1);
     };
 }
 // function Test(constructor: Function) {
@@ -24,7 +27,7 @@ let Car = class Car {
     }
 };
 Car = __decorate([
-    Test("Hello World")
+    Component("title")
 ], Car);
-const ford = new Car("Ford", "rouge");
-console.log(ford.carDetails());
+// const ford = new Car("Ford", "rouge")
+// console.log(ford.carDetails());
