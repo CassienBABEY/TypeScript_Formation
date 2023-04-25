@@ -1,27 +1,21 @@
-function Component(id:string) {
-    return function (target: any){
-        const el = document.getElementById(id)!;
-        const h1 = document.createElement('h1');
 
-        const objCar = new target("Ford", "rouge");
-        h1.innerText = objCar.carDetails();
-        el.append(h1);
-    }
-} 
-
-// function Test(constructor: Function) {
-//     console.log(constructor);
-// }
-
-@Component("title")
-class Car {
-
-    constructor(private n: string, private c: string) {}
-
-        carDetails() {
-            return `Marque: ${this.n} | Couleur: ${this.c}`
-        }
-}
-
-// const ford = new Car("Ford", "rouge")
-// console.log(ford.carDetails());
+function first() {
+    console.log("first(): factory evaluated");
+    return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+      console.log("first(): called");
+    };
+  }
+   
+  function second() {
+    console.log("second(): factory evaluated");
+    return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+      console.log("second(): called");
+    };
+  }
+   
+  class ExampleClass {
+    @first()
+    @second()
+    method() {}
+  }
+  
