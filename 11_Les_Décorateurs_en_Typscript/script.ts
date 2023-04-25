@@ -1,10 +1,15 @@
+function Test(hw: string) {
+    return function (constructor: Function){
+    console.log(constructor)
+    console.log(hw);
+    }
+} 
 
+// function Test(constructor: Function) {
+//     console.log(constructor);
+// }
 
-function Test(constructor: Function) {
-    console.log(constructor);
-}
-
-@Test
+@Test("Hello World")
 class Car {
 
     constructor(private n: string, private c: string) {}
